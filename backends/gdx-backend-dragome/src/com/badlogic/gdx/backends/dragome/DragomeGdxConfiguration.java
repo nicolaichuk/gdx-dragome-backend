@@ -57,7 +57,7 @@ import org.w3c.dom.typedarray.Int8Array;
 import org.w3c.dom.typedarray.Uint16Array;
 import org.w3c.dom.typedarray.Uint32Array;
 import org.w3c.dom.typedarray.Uint8Array;
-import org.w3c.dom.typedarray.Uint8ClampedArray;
+//TODO import org.w3c.dom.typedarray.Uint8ClampedArray;
 import org.w3c.dom.webgl.WebGLActiveInfo;
 import org.w3c.dom.webgl.WebGLBuffer;
 import org.w3c.dom.webgl.WebGLContextAttributes;
@@ -113,7 +113,7 @@ public abstract class DragomeGdxConfiguration extends ChainedInstrumentationDrag
 			WebGLObject.class, WebGLProgram.class, WebGLRenderbuffer.class, WebGLRenderingContext.class,
 			WebGLShader.class, WebGLTexture.class, WebGLUniformLocation.class, WebGLRenderingContextExtension.class,
 			ArrayBuffer.class, ArrayBufferView.class, Float32Array.class, Float64Array.class, Int16Array.class,
-			Int32Array.class, Int8Array.class, Uint8ClampedArray.class, Uint16Array.class, Uint32Array.class, Uint8Array.class,
+			Int32Array.class, Int8Array.class, /* TODO Uint8ClampedArray.class, */ Uint16Array.class, Uint32Array.class, Uint8Array.class,
 			ArrayBufferFactory.class, TypedArraysFactory.class, XMLHttpRequest.class, Object.class, WebSocket.class, XMLHttpRequestExtension.class));
 
 	public DragomeGdxConfiguration() {

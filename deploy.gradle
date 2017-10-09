@@ -11,6 +11,8 @@ def localMavenRepo = 'file://' + new File(System.getProperty('user.home'), '.m2/
 uploadArchives {
 	repositories {
 		mavenDeployer() {
+			uniqueVersion = false
+			
 			if(project.hasProperty('local')) {
 				if(project.hasProperty('localPath')) {
 					repository(url: "file://" + project.property('localPath'))

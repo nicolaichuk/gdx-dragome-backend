@@ -37,6 +37,7 @@ public class DragomeGraphics implements Graphics {
 	GLVersion glVersion;
 	HTMLCanvasElementExtension canvas;
 	GL20 gl;
+	GL30 gl3;
 	String extensions;
 	float fps = 0;
 	long lastTimeStamp = System.currentTimeMillis();
@@ -126,7 +127,7 @@ public class DragomeGraphics implements Graphics {
 
 	@Override
 	public GL30 getGL30 () {
-		return null;
+		return gl3;
 	}
 
 	@Override
@@ -315,5 +316,13 @@ public class DragomeGraphics implements Graphics {
 	}
 
 	public void setResizable (boolean resizable) {
+	}
+
+	public void setGL20 (GL20 gl20) {
+		gl = gl20;
+	}
+
+	public void setGL30 (GL30 gl30) {
+		gl3 = gl30;
 	}
 }

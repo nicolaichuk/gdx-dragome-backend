@@ -1,25 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>gdx-backend-dragome</groupId>
-  <artifactId>gdx-backend-dragome</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-
-  <repositories>
-    <repository>
-      <id>JBOSS_NEXUS</id>
-      <url>http://repository.jboss.org/nexus/content/groups/public</url>
-    </repository>
-    <repository>
-      <id>sonatype-snapshots</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </repository>
-    <repository>
-      <id>dragome</id>
-      <name>dragome</name>
-      <url>https://raw.github.com/dragome/dragome/master/maven</url>
-    </repository>
-  </repositories>
-
+  <groupId>com.github.xpenatan</groupId>
+  <artifactId>gdx-freetype-dragome</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
 
   <build>
     <plugins>
@@ -38,7 +21,6 @@
             <configuration>
               <sources>
                 <source>src</source>
-                <source>emu</source>
               </sources>
             </configuration>
           </execution>
@@ -53,17 +35,14 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+
     </plugins>
   </build>
+
   <dependencies>
     <dependency>
       <groupId>com.dragome</groupId>
-      <artifactId>dragome-web</artifactId>
-      <version>0.96-beta4</version>
-    </dependency>
-    <dependency>
-      <groupId>com.dragome</groupId>
-      <artifactId>dragome-bytecode-js-compiler</artifactId>
+      <artifactId>dragome-js-commons</artifactId>
       <version>0.96-beta4</version>
     </dependency>
     <dependency>
@@ -71,12 +50,16 @@
       <artifactId>dragome-js-jre</artifactId>
       <version>0.96-beta4</version>
     </dependency>
-
     <dependency>
       <groupId>com.badlogicgames.gdx</groupId>
       <artifactId>gdx</artifactId>
       <version>1.9.6</version>
     </dependency>
-
+    <dependency>
+      <groupId>com.github.xpenatan</groupId>
+      <artifactId>gdx-backend-dragome</artifactId>
+      <version>1.0.0-ALL-SNAPSHOT</version>
+    </dependency>
   </dependencies>
+
 </project>

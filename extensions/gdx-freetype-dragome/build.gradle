@@ -1,0 +1,48 @@
+apply plugin: "java"
+apply from: '../../deploy.gradle'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+   
+}
+
+sourceSets.main.java.srcDirs = [
+        "src"
+]
+sourceSets.main.resources.srcDirs = [  ]
+
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            pom.project {
+                name 'gdx-freetype-dragome'
+                artifactId 'gdx-freetype-dragome'
+                packaging 'jar'
+                description 'Java to Javascript generator for freetype'
+            }
+        }
+    }
+}
+
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+
+javadoc {
+    options.encoding = 'UTF-8'
+    options.addStringOption('Xdoclint:none', '-quiet')
+}

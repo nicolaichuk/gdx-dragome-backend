@@ -49,13 +49,26 @@ project(":backends:gdx-backend-dragome") {
 	}
 }
 
+project(":extensions:gdx-freetype-dragome") {
+	dependencies {
+		compile project(":backends:gdx-backend-dragome")
+		compile "com.badlogicgames.gdx:gdx:$gdxVersion"
+		compile "com.dragome:dragome-bytecode-js-compiler:$dragomeVersion"
+		compile "com.dragome:dragome-core:$dragomeVersion"
+		compile "com.dragome:dragome-js-commons:$dragomeVersion"
+		compile "com.dragome:dragome-js-jre:$dragomeVersion"
+		compile "com.dragome:dragome-w3c-standards:$dragomeVersion"
+		compile "com.dragome:dragome-web:$dragomeVersion"
+	}
+}
+
 dependencies {
 	subprojects.each {
 		childJars project(it.path)
 	}
 }
 
-task packTest(type: Jar, dependsOn: [':backends:gdx-backend-dragome:build']) {
+task packTest(type: Jar, dependsOn: [':backends:gdx-backend-dragome:build', ':extensions:gdx-freetype-dragome:build']) {
 	project.group = GROUPID
 	project.version = VERSION + "-ALL" + TYPE
 
