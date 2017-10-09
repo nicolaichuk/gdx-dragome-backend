@@ -4,6 +4,8 @@ ext {
 	TYPE = "-SNAPSHOT"
 	gdxVersion = "1.9.6"
 	dragomeVersion = '0.96-beta4'
+	
+	gradleVersion = '4.2.1'
 }
 
 configurations {
@@ -99,3 +101,14 @@ task packTest(type: Jar, dependsOn: [':backends:gdx-backend-dragome:build']) {
 artifacts {
 	archives packTest
 }
+
+
+//////////////////////////////////
+// Wrapper config
+//////////////////////////////////
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "$gradleVersion"
+}
+
+//////////////////////////////////
