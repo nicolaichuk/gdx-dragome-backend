@@ -70,7 +70,11 @@ dependencies {
 
 task packTest(type: Jar, dependsOn: [':backends:gdx-backend-dragome:build', ':extensions:gdx-freetype-dragome:build']) {
 	project.group = GROUPID
-	project.version = VERSION + "-ALL" + TYPE
+	ext.versionPrefix = 'ALL'
+	if(project.hasProperty('versionPrefix')) {
+		ext.versionPrefix = project.property('versionPrefix')
+	}
+	project.version = VERSION + '-' + ext.versionPrefix + TYPE
 
 	apply from: 'deploy.gradle'
 
